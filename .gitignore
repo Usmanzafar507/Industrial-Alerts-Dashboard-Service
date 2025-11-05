@@ -1,0 +1,123 @@
+###############################################
+# 🌍 Global / OS-specific ignores
+###############################################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+###############################################
+# 🧠 IDEs / Editors
+###############################################
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+*.swo
+
+###############################################
+# 🧱 Backend (.NET / C#)
+###############################################
+bin/
+obj/
+publish/
+TestResults/
+*.dbmdl
+*.bak
+*.log
+*.ncb
+*.opendb
+*.vspx
+*.vspscc
+*.psess
+*.vsp
+*.vsmdi
+*.coverage
+*.orig
+*.tmp
+*.cache
+
+# .NET environment and config
+appsettings.*.json
+launchSettings.json
+
+# User secrets
+secrets.json
+
+# Entity Framework
+Migrations/
+
+###############################################
+# ⚛️ Frontend (Next.js / Node)
+###############################################
+node_modules/
+.next/
+out/
+dist/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js build artifacts
+.vercel/
+.vercel_build_output/
+.next/static/
+.next/cache/
+
+###############################################
+# 🧰 Logs / Temporary files
+###############################################
+*.log
+logs/
+temp/
+tmp/
+
+###############################################
+# 🧪 Testing / Reports
+###############################################
+coverage/
+lcov-report/
+*.lcov
+
+###############################################
+# 🐋 Docker / Containers
+###############################################
+docker-compose.override.yml
+**/Dockerfile.local
+**/docker-compose.local.yml
+
+###############################################
+# 🪣 Misc
+###############################################
+*.tgz
+*.zip
+*.tar
+*.gz
+*.7z
+
+###############################################
+# ✅ Custom Project Directories
+###############################################
+# (Optional: add if you generate build or artifacts)
+artifacts/
+packages/
