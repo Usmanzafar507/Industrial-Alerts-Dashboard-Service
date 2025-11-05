@@ -25,7 +25,7 @@ ASP.NET Core 8 Web API + EF Core + SignalR + JWT. Simulates telemetry, raises al
 
 ### Prerequisites
 - .NET 8 SDK
-- SQL Server (default), or PostgreSQL (optional). Set connection string accordingly.
+- SQL Server (default). Set connection string accordingly.
 
 ### Configure
 
@@ -37,15 +37,11 @@ Edit `src/Api/appsettings.Development.json`:
     "Secret": "super_dev_secret_change_me_please_1234567890"
   },
   "ConnectionStrings": {
-    "Default": "Server=localhost;Database=AlertServiceDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True"
-    // Or PostgreSQL:
-    // "Default": "Host=localhost;Port=5432;Database=alertservicedb;Username=postgres;Password=postgres"
+    "Default": "Server=localhost;Database=AlertServiceDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True" 
   }
 }
 ```
-
-Switching provider is automatic based on the connection string: if it looks like PostgreSQL (starts with `Host=`), Npgsql is used, otherwise SQL Server.
-
+ 
 ### Run API
 
 ```bash
@@ -67,8 +63,7 @@ Migrations are included in `src/Infrastructure/Migrations`. To re-create:
 # Example: SQL Server
 dotnet ef database update --project src/Infrastructure/Infrastructure.csproj --startup-project src/Api/Api.csproj
 ```
-
-For PostgreSQL, ensure your connection string points to PostgreSQL and Npgsql server is available.
+ 
 
 ### Run Tests
 
@@ -114,8 +109,5 @@ curl -X POST http://localhost:5000/alerts/{id}/ack -H "Authorization: Bearer <to
 - The background simulator polls config each iteration; changes to config reflect automatically without restart.
 - CORS is permissive for demo; restrict origins for production.
 
-## Docker (optional)
-
-A simple docker-compose can be added to run API + DB. If needed, request it and it will be generated with SQL Server or PostgreSQL services.
 
 
